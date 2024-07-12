@@ -48,18 +48,18 @@
                 <fieldset>
                     <legend>Select gift frequency</legend>
                     <ul class="classy-variable-chooser interval horizontal">
-                        <li><input type="radio" id="one-time" name="frequency" value="one-time"><label for="one-time">One time</label></li>
-                        <li><input type="radio" id="recurring" name="frequency" value="recurring" checked><label for="recurring">Recurring</label></li>
+                        <li><button type="button" class="btn frequency-btn" data-frequency="one-time"><span>One time</span></button></li>
+                        <li><button type="button" class="btn frequency-btn active" data-frequency="recurring"><span>Recurring</span></button></li>
                     </ul>
                 </fieldset>
                 <fieldset>
                     <legend>Select amount (in US dollars)</legend>
                     <ul class="classy-variable-chooser amounts">
-                        <li><input type="radio" id="amount-12" name="amount" value="12" checked><label for="amount-12">$12</label></li>
-                        <li><input type="radio" id="amount-20" name="amount" value="20"><label for="amount-20">$20</label></li>
-                        <li><input type="radio" id="amount-30" name="amount" value="30"><label for="amount-30">$30</label></li>
-                        <li><input type="radio" id="amount-50" name="amount" value="50"><label for="amount-50">$50</label></li>
-                        <li><input type="radio" id="amount-other" name="amount" value="other"><label for="amount-other">Other</label></li>
+                        <li><button type="button" class="btn amount-btn active" data-amount="12"><span>$12</span></button></li>
+                        <li><button type="button" class="btn amount-btn" data-amount="20"><span>$20</span></button></li>
+                        <li><button type="button" class="btn amount-btn" data-amount="30"><span>$30</span></button></li>
+                        <li><button type="button" class="btn amount-btn" data-amount="50"><span>$50</span></button></li>
+                        <li><button type="button" class="btn amount-btn" data-amount="other"><span>Other</span></button></li>
                     </ul>
                     <input type="text" id="custom-amount" name="custom-amount" placeholder="Enter custom amount" style="display:none;">
                 </fieldset>
