@@ -7,6 +7,270 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+Okay, you can look at my website if that's what you're looking for.
+ChatGPT
+I don't have the ability to browse the web directly or access specific websites unless you provide a link or more details about what you need help with. Could you let me know what specifically you would like to discuss or need help with regarding your website?
+
+Give me a review of what I said the website would be about.
+ChatGPT
+You mentioned that your website, eduPrep Hub, is aimed at providing CSEC and CAPE past papers and resources such as books. Your main focus is on creating a simple and well-designed user interface. Is there anything specific you want feedback on or any new updates you’re considering for the website?
+
+Okay, so I haven't started as yet, so just give me a list of all the subjects that I would be working on. Give me a list of subjects, so I can work in that order.
+ChatGPT
+Sure, here's a list of subjects you might consider for CSEC and CAPE. You can use this list to organize your work on eduPrep Hub.
+
+For CSEC:
+
+Mathematics
+English A (English Language)
+English B (English Literature)
+Integrated Science
+Physics
+Chemistry
+Biology
+Principles of Accounts (POA)
+Principles of Business (POB)
+Information Technology
+Social Studies
+Geography
+History
+Spanish
+French
+Agricultural Science
+Home Economics
+Physical Education
+Visual Arts
+Technical Drawing
+For CAPE:
+
+Pure Mathematics
+Applied Mathematics
+Physics
+Chemistry
+Biology
+Environmental Science
+Computer Science
+Information Technology
+Accounting
+Management of Business
+Economics
+Geography
+Sociology
+Caribbean Studies
+Communication Studies
+History
+Law
+Literature in English
+Spanish
+French
+You can start with the most in-demand subjects or those you have the most resources for, then proceed from there. Does this list work for you?
+
+There's just a very good list. I would like to start with CAPE Physics. CAPE Physics, right, because that's a subject I'll be doing now. I'll be doing CAPE Physics, Communication Studies, Computer Science, and Communication Studies. So yeah, I'm going to start with those four subjects.
+ChatGPT
+Memory updated
+Starting with those subjects makes sense since you're currently studying them. For each subject, you might want to include:
+
+Past exam papers
+Syllabi
+Study guides and notes
+Sample questions and answers
+Videos or tutorials explaining key concepts
+Does that sound like a good plan to you?
+
+Yes, that's just excellent, and I'm also doing information technology upon those other subjects.
+ChatGPT
+Memory updated
+Great! So you'll be starting with CAPE Physics, Communication Studies, Computer Science, and Information Technology. This should give you a solid foundation for your website and help you stay organized with your studies. Do you need any specific help with materials or resources for any of these subjects?
+
+Okay, so I'm going to start with the exam passpapers for physics. So, how exactly would I be able to show those passpapers, which are usually in the form of PDFs, on a website? I'm planning on using HTML and JavaScript with CSS to create the website. So, how can I show and represent PDF files?
+ChatGPT
+To display PDF files on your website using HTML, JavaScript, and CSS, you can use several methods. Here's a straightforward approach:
+
+Using an <iframe> Tag
+You can embed PDF files directly into your web pages using the <iframe> tag. This method is simple and widely supported.
+
+HTML Code:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAPE Physics Past Papers</h1>
+    <iframe src="path/to/your-pdf-file.pdf"></iframe>
+</body>
+</html>
+Explanation:
+
+The <iframe> tag includes the src attribute pointing to the location of your PDF file.
+The CSS ensures that the iframe takes up the full width and height of the viewport.
+Using a JavaScript Library (PDF.js)
+For more control over how the PDF is displayed, you can use PDF.js, a popular open-source library by Mozilla.
+
+Include PDF.js Library:
+You can include PDF.js from a CDN in your HTML file:
+
+html
+Copy code
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+HTML Structure:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        #pdf-container {
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAPE Physics Past Papers</h1>
+    <div id="pdf-container"></div>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script>
+        const url = 'path/to/your-pdf-file.pdf';
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+
+        pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+            pdfDoc.getPage(1).then(function(page) {
+                const scale = 1.5;
+                const viewport = page.getViewport({scale: scale});
+
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                page.render({canvasContext: context, viewport: viewport});
+                document.getElementById('pdf-container').appendChild(canvas);
+            });
+        });
+    </script>
+</body>
+</html>
+Explanation:
+
+This script uses PDF.js to load and render the first page of the PDF onto a canvas element.
+The canvas element is appended to a container div, which can be styled and manipulated as needed.
+These methods should help you display PDF files on your website effectively. Do you need any more specific details or assistance with these methods?
+
+Okay, so I want to use GitHub to host a website. If you know, GitHub does it for free. That's what I'm going to be doing right now. So I'm going to go set it up right now. How do I do that? How do I do that exactly?
+ChatGPT
+Hosting a website on GitHub using GitHub Pages is a great choice. Here’s a step-by-step guide to set it up:
+
+Step 1: Create a GitHub Repository
+Go to GitHub: Navigate to GitHub and log in to your account.
+Create a New Repository: Click on the + icon in the upper-right corner and select "New repository".
+Repository Name: Name your repository in the format username.github.io (replace username with your GitHub username).
+Initialize Repository: Check the box to initialize the repository with a README file.
+Create Repository: Click the "Create repository" button.
+Step 2: Clone the Repository
+Clone Repository Locally: Open your terminal (or Git Bash if you're on Windows) and clone the repository to your local machine.
+bash
+Copy code
+git clone https://github.com/username/username.github.io
+Replace username with your GitHub username.
+Step 3: Add Your Website Files
+Navigate to the Directory:
+bash
+Copy code
+cd username.github.io
+Add Your Website Files: Add your HTML, CSS, JavaScript, and other necessary files to this directory.
+Add PDF Files: Ensure your PDFs are also added to this directory or a subdirectory within it.
+Step 4: Commit and Push Your Changes
+Stage Changes:
+bash
+Copy code
+git add .
+Commit Changes:
+bash
+Copy code
+git commit -m "Initial commit"
+Push to GitHub:
+bash
+Copy code
+git push origin main
+Step 5: Configure GitHub Pages
+Go to Repository Settings: Navigate to the settings of your repository on GitHub.
+Scroll to GitHub Pages Section: In the settings, scroll down to the "GitHub Pages" section.
+Select Source: Under "Source", select the branch you want to use (usually main or master).
+Save: Click "Save".
+Step 6: Access Your Website
+Wait for Deployment: It may take a few minutes for your site to be published.
+Visit Your Site: Go to https://username.github.io to see your website live.
+This process will get your website up and running on GitHub Pages. Do you need any specific help with any of these steps?
+
+I think that's enough. I'm going to try what you said I should do.
+ChatGPT
+That sounds great! If you run into any issues or have any questions along the way, feel free to reach out. Good luck with setting up your website!
+
+Okay, nice so far, I just created the github page, and I have a blank website basically that just has the description or whatever, the README file. So what I need now is, what should I put as the home screen? What would be a good homepage for this website? Generate an image of what the homepage would look like for this website. A good, attractive homepage.
+ChatGPT
+
+Here's a design concept for your eduPrep Hub homepage. It features a welcoming header, a navigation bar, and sections highlighting featured subjects with icons, a search bar for finding past papers, and a footer with social media links. This should give you a good visual starting point for your website. How do you like it?
+
+I think you should try it again, but this time ensure that the image is simplistic and actually looks like a website instead of a post.
+ChatGPT
+
+Here's a revised, more simplistic design for the eduPrep Hub homepage. It features a clean layout with a welcoming header, navigation bar, grid layout for featured subjects, a prominent search bar, and a footer with social media icons. I hope this better matches your vision for the website. What do you think?
+
+I think it's a bit too cluttered, there are too many icons and images, I think you should simplify it a lot more, add some color, I want a lot of color in the image, like in the website, I want a lot of color, so simplify it some more, make it more cartoony and simplistic.
+ChatGPT
+
+Here's a more colorful and simplistic design for the eduPrep Hub homepage with a cartoonish and playful style. It features a welcoming header, navigation bar, large colorful buttons for featured subjects, a prominent search bar, and a footer with social media icons. I hope this aligns better with your vision. How do you like it?
+
+Still a lot better, but it's still very crowded. Still too many things on the screen, but I'll work with it. I'll work with some. I'll work on my own. Yeah.
+ChatGPT
+Got it. Simplifying and decluttering further on your own sounds like a good plan. If you need any more help or feedback as you work on it, feel free to reach out. Good luck with your website!
+
+Ok I came up with a design idea. I want it to look like the khan academy website layout
+ChatGPT
+To create a layout similar to Khan Academy's website, you'll want to focus on a clean, user-friendly design with the following key elements:
+
+Header: A simple header with your website's logo and navigation links.
+Hero Section: A welcoming hero section with a prominent search bar.
+Content Sections: Organized sections for featured subjects, courses, or resources.
+Footer: A footer with additional links and social media icons.
+Here's a basic HTML and CSS structure to get you started:
+
+HTML
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eduPrep Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <header>
         <div class="logo">eduPrep Hub</div>
         <nav>
@@ -17,6 +281,440 @@
                 <li><a href="#">Resources</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Welcome to eduPrep Hub</h1>
+            <input type="text" placeholder="Search past papers and resources...">
+        </section>
+        
+        <section class="featured-subjects">
+            <h2>Featured Subjects</h2>
+            <div class="subjects-grid">
+                <div class="subject">Physics</div>
+                <div class="subject">Communication Studies</div>
+                <div class="subject">Computer Science</div>
+                <div class="subject">Information Technology</div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 eduPrep Hub. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
+CSS (styles.css)
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+}
+
+.hero input {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+}
+
+.featured-subjects {
+    padding: 20px;
+    text-align: center;
+}
+
+.subjects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.subject {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    max-width: 200px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+}
+
+footer .social-icons a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+This layout is designed to be simple and clean, with an emphasis on user experience. You can adjust the colors, fonts, and other styling to better match your vision. Feel free to ask for further customization or additional features!
+
+
+Ok so what do I do to get the html and css to show on the site? 
+ChatGPT
+To get your HTML and CSS to show on the site, follow these steps:
+
+Add HTML and CSS Files:
+
+Create an index.html file and a styles.css file in your repository.
+Edit index.html:
+
+Copy the HTML structure I provided earlier into your index.html file.
+Edit styles.css:
+
+Copy the CSS styles I provided earlier into your styles.css file.
+Link CSS to HTML:
+
+Ensure your HTML file links to the CSS file. Here’s a reminder of the index.html structure with the link to the CSS file:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eduPrep Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">eduPrep Hub</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Subjects</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Welcome to eduPrep Hub</h1>
+            <input type="text" placeholder="Search past papers and resources...">
+        </section>
+        
+        <section class="featured-subjects">
+            <h2>Featured Subjects</h2>
+            <div class="subjects-grid">
+                <div class="subject">Physics</div>
+                <div class="subject">Communication Studies</div>
+                <div class="subject">Computer Science</div>
+                <div class="subject">Information Technology</div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 eduPrep Hub. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
+Push Changes to GitHub:
+
+Add the new files and commit the changes.
+bash
+Copy code
+git add index.html styles.css
+git commit -m "Add initial HTML and CSS for homepage"
+git push origin main
+Check Your GitHub Pages:
+
+After pushing the changes, GitHub Pages should automatically update your site. Visit https://nicholassalmon.github.io to see your updated site.
+Example Folder Structure
+Your repository should look something like this:
+
+lua
+Copy code
+nicholassalmon.github.io/
+├── CNAME
+├── README.md
+├── index.html
+└── styles.css
+This setup should make your HTML and CSS files display correctly on your GitHub Pages site. If you encounter any issues, let me know!
+
+
+
+what to do?
+ChatGPT
+It looks like you have correctly set up the A records for your domain to point to GitHub's servers. However, you might be missing the necessary CNAME record for the custom domain to work correctly with GitHub Pages.
+
+Here’s what you need to do:
+
+Step 1: Add a CNAME Record
+Go to Your DNS Settings: Where you manage your domain (e.g., GoDaddy, Namecheap, etc.), add a new CNAME record.
+Create CNAME Record:
+Host: www
+Type: CNAME
+Value: nicholassalmon.github.io
+Step 2: Ensure Your CNAME File in the GitHub Repository is Correct
+File Content: Your CNAME file should contain only your custom domain, which looks correct (edu-prep.com).
+Push Changes: Make sure your CNAME file is committed and pushed to the main branch of your repository.
+Step 3: Wait for DNS Propagation
+DNS changes can take some time to propagate. It might take a few minutes to a few hours for the changes to take effect globally.
+
+Step 4: Verify DNS Settings
+Use a DNS lookup tool like DNS Checker to verify that the DNS records are correctly configured and pointing to GitHub’s servers.
+
+Summary
+Your DNS settings should include:
+
+A Records:
+
+@ A 185.199.108.153
+@ A 185.199.109.153
+@ A 185.199.110.153
+@ A 185.199.111.153
+CNAME Record:
+
+www CNAME nicholassalmon.github.io
+After making these changes, check back on GitHub Pages settings and verify the configuration again. If everything is set correctly, your site should be accessible at both edu-prep.com and www.edu-prep.com.
+
+Let me know if you need further assistance!
+
+
+ChatGPT
+The error message indicates that your domain is not resolving correctly to the GitHub Pages server. Let's verify and correct the DNS configuration:
+
+Step 1: Verify the CNAME Record
+Ensure the CNAME Record: Verify that you have a CNAME record set up with the following details:
+Host: www
+Type: CNAME
+Value: nicholassalmon.github.io
+Step 2: Add Another A Record
+Sometimes adding another A record for the root domain (edu-prep.com) can help. Add a new A record in your DNS settings:
+
+Host: @
+Type: A
+Value: 185.199.108.153
+Step 3: Update the CNAME File in GitHub
+Ensure your CNAME file in the root of your repository contains only edu-prep.com.
+
+Step 4: Recheck DNS Settings
+Wait for Propagation: DNS changes can take some time to propagate. It may take several minutes to a few hours.
+Use DNS Checker: Use a DNS lookup tool like DNS Checker to verify that your DNS records are correctly configured and pointing to GitHub's servers.
+Example DNS Configuration
+Your DNS settings should look like this:
+
+A Records:
+
+@ A 185.199.108.153
+@ A 185.199.109.153
+@ A 185.199.110.153
+@ A 185.199.111.153
+CNAME Record:
+
+www CNAME nicholassalmon.github.io
+Double-Check with Your Domain Registrar
+Make sure your domain registrar's interface is correctly configured and saving the DNS records. Some registrars have unique interfaces that may require additional steps.
+
+Check GitHub Pages Settings Again
+Once you've made these changes and allowed some time for propagation, go back to the GitHub Pages settings and click "Check again".
+
+Summary
+Verify CNAME and A records in DNS settings.
+Ensure the CNAME file in GitHub contains edu-prep.com.
+Allow time for DNS propagation.
+Recheck GitHub Pages settings.
+If everything is set up correctly, your custom domain should work with GitHub Pages. If you encounter any further issues, let me know!
+
+
+how long should i wait?
+ChatGPT
+Your DNS settings now look correct. Typically, DNS changes can propagate within a few minutes, but it can sometimes take up to 48 hours. Here are the steps you can follow to monitor the propagation:
+
+Monitor DNS Propagation
+Use DNS Checker:
+
+Go to DNS Checker and enter your domain edu-prep.com.
+Check the A records and CNAME records to see if they are pointing correctly to GitHub Pages.
+Verify with Multiple Locations:
+
+Ensure that the DNS changes have propagated to multiple geographic locations by using the DNS Checker tool.
+Recheck GitHub Pages Settings:
+
+After allowing some time for propagation, go back to your GitHub Pages settings and click "Check again".
+Summary
+Wait for up to 48 hours for DNS propagation, though it often completes much sooner.
+Use tools like DNS Checker to monitor the status of your DNS records.
+Recheck your GitHub Pages settings periodically.
+If, after waiting and verifying the DNS settings, you still encounter issues, you might want to contact your domain registrar's support for further assistance.
+
+Let me know if you have any other questions or need further help!
+
+why isn't edu-prep.com working but www.edu-prep.com alone works? I want both to work
+ChatGPT
+To make both edu-prep.com and www.edu-prep.com work, you need to ensure that the DNS records for both the root domain (edu-prep.com) and the subdomain (www.edu-prep.com) are correctly configured. Here's how you can achieve this:
+
+Step 1: Configure DNS Records for Both Root and Subdomain
+Ensure your DNS settings include:
+
+A Records for the root domain:
+
+Host: @
+Type: A
+Value: 185.199.108.153
+Host: @
+Type: A
+Value: 185.199.109.153
+Host: @
+Type: A
+Value: 185.199.110.153
+Host: @
+Type: A
+Value: 185.199.111.153
+CNAME Record for the www subdomain:
+
+Host: www
+Type: CNAME
+Value: nicholassalmon.github.io
+Step 2: Configure GitHub Pages
+GitHub Pages Settings:
+Go to your repository settings on GitHub.
+In the GitHub Pages section, set your custom domain to edu-prep.com.
+Step 3: Redirect Root Domain to www Subdomain
+You can use a CNAME file or an .htaccess file to handle the redirection.
+
+CNAME File:
+
+Ensure your repository has a CNAME file with the following content:
+Copy code
+edu-prep.com
+.htaccess File (if supported by your host):
+
+Create an .htaccess file in the root of your repository with the following content:
+apache
+Copy code
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^edu-prep\.com [NC]
+RewriteRule ^(.*)$ http://www.edu-prep.com/$1 [L,R=301,NC]
+Example DNS Configuration
+Your DNS settings should look like this:
+
+A Records:
+
+@ A 185.199.108.153
+@ A 185.199.109.153
+@ A 185.199.110.153
+@ A 185.199.111.153
+CNAME Record:
+
+www CNAME nicholassalmon.github.io
+Check and Wait
+Check DNS Propagation:
+Use DNS Checker to verify that both edu-prep.com and www.edu-prep.com are resolving correctly.
+Wait for DNS Propagation:
+DNS changes can take time to propagate. Typically, it can take a few minutes to a few hours, but sometimes up to 48 hours.
+After following these steps, both edu-prep.com and www.edu-prep.com should work correctly. If you encounter further issues, please let me know!
+
+I want my header like this. I will add the logo to the directory with the name mainlogo: <div id="top-header-container" class="_dgdpujh" style="background-color: rgb(255, 255, 255);"><nav aria-label="page header" class="_9bl3wi" role="navigation"><div class="_1ycdc3w"><div class="_1qhmdkk0"><div class="_1c8t70d"><button data-testid="learn-menu-dropdown" aria-expanded="false" class="_v2ig2y4"><span data-learn-menu-trigger="true" data-testid="learn-menu-button">Courses<span class="_3zofox"><span class="_19zgqrew"></span></span></span></button><div id="header-dropdown" class="_17fow1wv"><ul class="_njywdf2" data-testid="learn-menu"><li><div class="_1b2zmqj" data-test-learn-menu-domain="math"><ul><li data-navigable-index="0"><a tabindex="-1" class="_hsazh44" href="/math/k-8-grades"><span class="_1uk4ltt6">Math: Pre-K - 8th grade</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="1"><a tabindex="-1" aria-label="Pre-K through grade 2 (Khan Kids)" href="/kids" class="_4crv9hk"><span class="_u1utz4z">Pre-K through grade 2 (Khan Kids)</span></a></li><li data-navigable-index="2"><a tabindex="-1" aria-label="Early math review" href="/math/early-math" class="_4crv9hk"><span class="_u1utz4z">Early math review</span></a></li><li data-navigable-index="3"><a tabindex="-1" aria-label="2nd grade" class="_4crv9hk" href="/math/cc-2nd-grade-math"><span class="_u1utz4z">2nd grade</span></a></li><li data-navigable-index="4"><a tabindex="-1" aria-label="3rd grade" class="_4crv9hk" href="/math/cc-third-grade-math"><span class="_u1utz4z">3rd grade</span></a></li><li data-navigable-index="5"><a tabindex="-1" aria-label="4th grade" class="_4crv9hk" href="/math/cc-fourth-grade-math"><span class="_u1utz4z">4th grade</span></a></li><li data-navigable-index="6"><a tabindex="-1" aria-label="5th grade" class="_4crv9hk" href="/math/cc-fifth-grade-math"><span class="_u1utz4z">5th grade</span></a></li><li data-navigable-index="7"><a tabindex="-1" aria-label="6th grade" class="_4crv9hk" href="/math/cc-sixth-grade-math"><span class="_u1utz4z">6th grade</span></a></li><li data-navigable-index="8"><a tabindex="-1" aria-label="7th grade" class="_4crv9hk" href="/math/cc-seventh-grade-math"><span class="_u1utz4z">7th grade</span></a></li><li data-navigable-index="9"><a tabindex="-1" aria-label="8th grade" class="_4crv9hk" href="/math/cc-eighth-grade-math"><span class="_u1utz4z">8th grade</span></a></li><li data-navigable-index="10"><a tabindex="-1" aria-label="See Pre-K - 8th grade Math" class="_4crv9hk" href="/math/k-8-grades"><span class="_u1utz4z">See Pre-K - 8th grade Math</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="math"><ul><li data-navigable-index="11"><a tabindex="-1" class="_hsazh44" href="/math/get-ready-courses"><span class="_1uk4ltt6">Math: Get ready courses</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="12"><a tabindex="-1" aria-label="Get ready for 3rd grade" class="_4crv9hk" href="/math/get-ready-for-3rd-grade"><span class="_u1utz4z">Get ready for 3rd grade</span></a></li><li data-navigable-index="13"><a tabindex="-1" aria-label="Get ready for 4th grade" class="_4crv9hk" href="/math/get-ready-for-4th-grade"><span class="_u1utz4z">Get ready for 4th grade</span></a></li><li data-navigable-index="14"><a tabindex="-1" aria-label="Get ready for 5th grade" class="_4crv9hk" href="/math/get-ready-for-5th-grade"><span class="_u1utz4z">Get ready for 5th grade</span></a></li><li data-navigable-index="15"><a tabindex="-1" aria-label="Get ready for 6th grade" class="_4crv9hk" href="/math/get-ready-for-6th-grade"><span class="_u1utz4z">Get ready for 6th grade</span></a></li><li data-navigable-index="16"><a tabindex="-1" aria-label="Get ready for 7th grade" class="_4crv9hk" href="/math/get-ready-for-7th-grade"><span class="_u1utz4z">Get ready for 7th grade</span></a></li><li data-navigable-index="17"><a tabindex="-1" aria-label="Get ready for 8th grade" class="_4crv9hk" href="/math/get-ready-for-8th-grade"><span class="_u1utz4z">Get ready for 8th grade</span></a></li><li data-navigable-index="18"><a tabindex="-1" aria-label="Get ready for Algebra 1" class="_4crv9hk" href="/math/get-ready-for-algebra-i"><span class="_u1utz4z">Get ready for Algebra 1</span></a></li><li data-navigable-index="19"><a tabindex="-1" aria-label="Get ready for Geometry" class="_4crv9hk" href="/math/get-ready-for-geometry"><span class="_u1utz4z">Get ready for Geometry</span></a></li><li data-navigable-index="20"><a tabindex="-1" aria-label="Get ready for Algebra 2" class="_4crv9hk" href="/math/get-ready-for-algebra-ii"><span class="_u1utz4z">Get ready for Algebra 2</span></a></li><li data-navigable-index="21"><a tabindex="-1" aria-label="Get ready for Precalculus" class="_4crv9hk" href="/math/get-ready-for-precalculus"><span class="_u1utz4z">Get ready for Precalculus</span></a></li><li data-navigable-index="22"><a tabindex="-1" aria-label="Get ready for AP® Calculus" class="_4crv9hk" href="/math/get-ready-for-ap-calc"><span class="_u1utz4z">Get ready for AP® Calculus</span></a></li><li data-navigable-index="23"><a tabindex="-1" aria-label="Get ready for AP® Statistics" class="_4crv9hk" href="/math/get-ready-for-ap-statistics"><span class="_u1utz4z">Get ready for AP® Statistics</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="math"><ul><li data-navigable-index="24"><a tabindex="-1" class="_hsazh44" href="/math"><span class="_1uk4ltt6">Math: high school &amp; college</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="25"><a tabindex="-1" aria-label="Algebra 1" class="_4crv9hk" href="/math/algebra"><span class="_u1utz4z">Algebra 1</span></a></li><li data-navigable-index="26"><a tabindex="-1" aria-label="Geometry" class="_4crv9hk" href="/math/geometry"><span class="_u1utz4z">Geometry</span></a></li><li data-navigable-index="27"><a tabindex="-1" aria-label="Algebra 2" class="_4crv9hk" href="/math/algebra2"><span class="_u1utz4z">Algebra 2</span></a></li><li data-navigable-index="28"><a tabindex="-1" aria-label="Integrated math 1" class="_4crv9hk" href="/math/math1"><span class="_u1utz4z">Integrated math 1</span></a></li><li data-navigable-index="29"><a tabindex="-1" aria-label="Integrated math 2" class="_4crv9hk" href="/math/math2"><span class="_u1utz4z">Integrated math 2</span></a></li><li data-navigable-index="30"><a tabindex="-1" aria-label="Integrated math 3" class="_4crv9hk" href="/math/math3"><span class="_u1utz4z">Integrated math 3</span></a></li><li data-navigable-index="31"><a tabindex="-1" aria-label="Algebra basics" class="_4crv9hk" href="/math/algebra-basics"><span class="_u1utz4z">Algebra basics</span></a></li><li data-navigable-index="32"><a tabindex="-1" aria-label="Trigonometry" class="_4crv9hk" href="/math/trigonometry"><span class="_u1utz4z">Trigonometry</span></a></li><li data-navigable-index="33"><a tabindex="-1" aria-label="Precalculus" class="_4crv9hk" href="/math/precalculus"><span class="_u1utz4z">Precalculus</span></a></li><li data-navigable-index="34"><a tabindex="-1" aria-label="High school statistics" class="_4crv9hk" href="/math/probability"><span class="_u1utz4z">High school statistics</span></a></li><li data-navigable-index="35"><a tabindex="-1" aria-label="Statistics &amp; probability" class="_4crv9hk" href="/math/statistics-probability"><span class="_u1utz4z">Statistics &amp; probability</span></a></li><li data-navigable-index="36"><a tabindex="-1" aria-label="College algebra" class="_4crv9hk" href="/math/college-algebra"><span class="_u1utz4z">College algebra</span></a></li><li data-navigable-index="37"><a tabindex="-1" aria-label="AP®︎/College Calculus AB" class="_4crv9hk" href="/math/ap-calculus-ab"><span class="_u1utz4z">AP®︎/College Calculus AB</span></a></li><li data-navigable-index="38"><a tabindex="-1" aria-label="AP®︎/College Calculus BC" class="_4crv9hk" href="/math/ap-calculus-bc"><span class="_u1utz4z">AP®︎/College Calculus BC</span></a></li><li data-navigable-index="39"><a tabindex="-1" aria-label="AP®︎/College Statistics" class="_4crv9hk" href="/math/ap-statistics"><span class="_u1utz4z">AP®︎/College Statistics</span></a></li><li data-navigable-index="40"><a tabindex="-1" aria-label="Multivariable calculus" class="_4crv9hk" href="/math/multivariable-calculus"><span class="_u1utz4z">Multivariable calculus</span></a></li><li data-navigable-index="41"><a tabindex="-1" aria-label="Differential equations" class="_4crv9hk" href="/math/differential-equations"><span class="_u1utz4z">Differential equations</span></a></li><li data-navigable-index="42"><a tabindex="-1" aria-label="Linear algebra" class="_4crv9hk" href="/math/linear-algebra"><span class="_u1utz4z">Linear algebra</span></a></li><li data-navigable-index="43"><a tabindex="-1" aria-label="See all Math" class="_4crv9hk" href="/math"><span class="_u1utz4z">See all Math</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="test-prep"><ul><li data-navigable-index="44"><a tabindex="-1" class="_hsazh44" href="/test-prep"><span class="_1uk4ltt6">Test prep</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="45"><a tabindex="-1" aria-label="Digital SAT" href="/digital-sat/start" class="_4crv9hk"><span class="_u1utz4z">Digital SAT</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="46"><a tabindex="-1" aria-label="LSAT" class="_4crv9hk" href="/test-prep/lsat-prep"><span class="_u1utz4z">LSAT</span></a></li><li data-navigable-index="47"><a tabindex="-1" aria-label="MCAT" class="_4crv9hk" href="/test-prep/mcat"><span class="_u1utz4z">MCAT</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="science"><ul><li data-navigable-index="48"><a tabindex="-1" class="_hsazh44" href="/science"><span class="_1uk4ltt6">Science</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="49"><a tabindex="-1" aria-label="Middle school biology" class="_4crv9hk" href="/science/ms-biology"><span class="_u1utz4z">Middle school biology</span></a></li><li data-navigable-index="50"><a tabindex="-1" aria-label="Middle school Earth and space science" class="_4crv9hk" href="/science/middle-school-earth-and-space-science"><span class="_u1utz4z">Middle school Earth and space science</span></a></li><li data-navigable-index="51"><a tabindex="-1" aria-label="Middle school physics" class="_4crv9hk" href="/science/ms-physics"><span class="_u1utz4z">Middle school physics</span></a></li><li data-navigable-index="52"><a tabindex="-1" aria-label="High school biology" class="_4crv9hk" href="/science/hs-bio"><span class="_u1utz4z">High school biology</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="53"><a tabindex="-1" aria-label="High school chemistry" class="_4crv9hk" href="/science/hs-chemistry"><span class="_u1utz4z">High school chemistry</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="54"><a tabindex="-1" aria-label="High school physics" class="_4crv9hk" href="/science/highschool-physics"><span class="_u1utz4z">High school physics</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="55"><a tabindex="-1" aria-label="AP®︎/College Biology" class="_4crv9hk" href="/science/ap-biology"><span class="_u1utz4z">AP®︎/College Biology</span></a></li><li data-navigable-index="56"><a tabindex="-1" aria-label="AP®︎/College Chemistry" class="_4crv9hk" href="/science/ap-chemistry-beta"><span class="_u1utz4z">AP®︎/College Chemistry</span></a></li><li data-navigable-index="57"><a tabindex="-1" aria-label="AP®︎/College Environmental Science" class="_4crv9hk" href="/science/ap-college-environmental-science"><span class="_u1utz4z">AP®︎/College Environmental Science</span></a></li><li data-navigable-index="58"><a tabindex="-1" aria-label="AP®︎/College Physics 1" class="_4crv9hk" href="/science/ap-college-physics-1"><span class="_u1utz4z">AP®︎/College Physics 1</span></a></li><li data-navigable-index="59"><a tabindex="-1" aria-label="Health and Medicine" class="_4crv9hk" href="/science/health-and-medicine"><span class="_u1utz4z">Health and Medicine</span></a></li><li data-navigable-index="60"><a tabindex="-1" aria-label="See all Science" class="_4crv9hk" href="/science"><span class="_u1utz4z">See all Science</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="computing"><ul><li data-navigable-index="61"><a tabindex="-1" class="_hsazh44" href="/computing"><span class="_1uk4ltt6">Computing</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="62"><a tabindex="-1" aria-label="Intro to CS - Python" class="_4crv9hk" href="/computing/intro-to-python-fundamentals"><span class="_u1utz4z">Intro to CS - Python</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="63"><a tabindex="-1" aria-label="Computer programming" class="_4crv9hk" href="/computing/computer-programming"><span class="_u1utz4z">Computer programming</span></a></li><li data-navigable-index="64"><a tabindex="-1" aria-label="AP®︎/College Computer Science Principles" class="_4crv9hk" href="/computing/ap-computer-science-principles"><span class="_u1utz4z">AP®︎/College Computer Science Principles</span></a></li><li data-navigable-index="65"><a tabindex="-1" aria-label="Pixar in a Box" class="_4crv9hk" href="/computing/pixar"><span class="_u1utz4z">Pixar in a Box</span></a></li><li data-navigable-index="66"><a tabindex="-1" aria-label="See all Computing" class="_4crv9hk" href="/computing"><span class="_u1utz4z">See all Computing</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="humanities"><ul><li data-navigable-index="67"><a tabindex="-1" class="_hsazh44" href="/humanities"><span class="_1uk4ltt6">Arts &amp; humanities</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="68"><a tabindex="-1" aria-label="US history" class="_4crv9hk" href="/humanities/us-history"><span class="_u1utz4z">US history</span></a></li><li data-navigable-index="69"><a tabindex="-1" aria-label="AP®︎/College US History" class="_4crv9hk" href="/humanities/ap-us-history"><span class="_u1utz4z">AP®︎/College US History</span></a></li><li data-navigable-index="70"><a tabindex="-1" aria-label="US government and civics" class="_4crv9hk" href="/humanities/us-government-and-civics"><span class="_u1utz4z">US government and civics</span></a></li><li data-navigable-index="71"><a tabindex="-1" aria-label="AP®︎/College US Government &amp; Politics" class="_4crv9hk" href="/humanities/ap-us-government-and-politics"><span class="_u1utz4z">AP®︎/College US Government &amp; Politics</span></a></li><li data-navigable-index="72"><a tabindex="-1" aria-label="World History Project - Origins to the Present" class="_4crv9hk" href="/humanities/whp-origins"><span class="_u1utz4z">World History Project - Origins to the Present</span></a></li><li data-navigable-index="73"><a tabindex="-1" aria-label="World History Project - 1750 to the Present" class="_4crv9hk" href="/humanities/whp-1750"><span class="_u1utz4z">World History Project - 1750 to the Present</span></a></li><li data-navigable-index="74"><a tabindex="-1" aria-label="AP®︎/College World History" class="_4crv9hk" href="/humanities/world-history-project-ap"><span class="_u1utz4z">AP®︎/College World History</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="75"><a tabindex="-1" aria-label="Big history" class="_4crv9hk" href="/humanities/big-history-project"><span class="_u1utz4z">Big history</span></a></li><li data-navigable-index="76"><a tabindex="-1" aria-label="Art history" class="_4crv9hk" href="/humanities/art-history"><span class="_u1utz4z">Art history</span></a></li><li data-navigable-index="77"><a tabindex="-1" aria-label="AP®︎/College Art History" class="_4crv9hk" href="/humanities/ap-art-history"><span class="_u1utz4z">AP®︎/College Art History</span></a></li><li data-navigable-index="78"><a tabindex="-1" aria-label="Constitution 101 (pilot)" class="_4crv9hk" href="/humanities/constitution-101"><span class="_u1utz4z">Constitution 101 (pilot)</span></a></li><li data-navigable-index="79"><a tabindex="-1" aria-label="See all Arts &amp; Humanities" class="_4crv9hk" href="/humanities"><span class="_u1utz4z">See all Arts &amp; Humanities</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="economics-finance-domain"><ul><li data-navigable-index="80"><a tabindex="-1" class="_hsazh44" href="/economics-finance-domain"><span class="_1uk4ltt6">Economics</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="81"><a tabindex="-1" aria-label="Macroeconomics" class="_4crv9hk" href="/economics-finance-domain/macroeconomics"><span class="_u1utz4z">Macroeconomics</span></a></li><li data-navigable-index="82"><a tabindex="-1" aria-label="AP®︎/College Macroeconomics" class="_4crv9hk" href="/economics-finance-domain/ap-macroeconomics"><span class="_u1utz4z">AP®︎/College Macroeconomics</span></a></li><li data-navigable-index="83"><a tabindex="-1" aria-label="Microeconomics" class="_4crv9hk" href="/economics-finance-domain/microeconomics"><span class="_u1utz4z">Microeconomics</span></a></li><li data-navigable-index="84"><a tabindex="-1" aria-label="AP®︎/College Microeconomics" class="_4crv9hk" href="/economics-finance-domain/ap-microeconomics"><span class="_u1utz4z">AP®︎/College Microeconomics</span></a></li><li data-navigable-index="85"><a tabindex="-1" aria-label="See all Economics" class="_4crv9hk" href="/economics-finance-domain"><span class="_u1utz4z">See all Economics</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="ela"><ul><li data-navigable-index="86"><a tabindex="-1" class="_hsazh44" href="/ela"><span class="_1uk4ltt6">Reading &amp; language arts</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="87"><a tabindex="-1" aria-label="Up to 2nd grade (Khan Kids)" href="/kids" class="_4crv9hk"><span class="_u1utz4z">Up to 2nd grade (Khan Kids)</span></a></li><li data-navigable-index="88"><a tabindex="-1" aria-label="2nd grade" class="_4crv9hk" href="/ela/cc-2nd-reading-vocab"><span class="_u1utz4z">2nd grade</span></a></li><li data-navigable-index="89"><a tabindex="-1" aria-label="3rd grade" class="_4crv9hk" href="/ela/cc-3rd-reading-vocab"><span class="_u1utz4z">3rd grade</span></a></li><li data-navigable-index="90"><a tabindex="-1" aria-label="4th grade" class="_4crv9hk" href="/ela/cc-4th-reading-vocab"><span class="_u1utz4z">4th grade</span></a></li><li data-navigable-index="91"><a tabindex="-1" aria-label="5th grade" class="_4crv9hk" href="/ela/cc-5th-reading-vocab"><span class="_u1utz4z">5th grade</span></a></li><li data-navigable-index="92"><a tabindex="-1" aria-label="6th grade reading and vocabulary" class="_4crv9hk" href="/ela/new-6th-grade-reading-and-vocabulary"><span class="_u1utz4z">6th grade reading and vocabulary</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="93"><a tabindex="-1" aria-label="7th grade" class="_4crv9hk" href="/ela/cc-7th-reading-vocab"><span class="_u1utz4z">7th grade</span></a></li><li data-navigable-index="94"><a tabindex="-1" aria-label="8th grade" class="_4crv9hk" href="/ela/cc-8th-reading-vocab"><span class="_u1utz4z">8th grade</span></a></li><li data-navigable-index="95"><a tabindex="-1" aria-label="9th grade reading and vocabulary" class="_4crv9hk" href="/ela/9th-grade-reading-and-vocabulary"><span class="_u1utz4z">9th grade reading and vocabulary</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="96"><a tabindex="-1" aria-label="10th grade reading and vocabulary" class="_4crv9hk" href="/ela/10th-grade-reading-and-vocabulary"><span class="_u1utz4z">10th grade reading and vocabulary</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="97"><a tabindex="-1" aria-label="Grammar" class="_4crv9hk" href="/humanities/grammar"><span class="_u1utz4z">Grammar</span></a></li><li data-navigable-index="98"><a tabindex="-1" aria-label="See all Reading &amp; Language Arts" class="_4crv9hk" href="/ela"><span class="_u1utz4z">See all Reading &amp; Language Arts</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="college-careers-more"><ul><li data-navigable-index="99"><a tabindex="-1" class="_hsazh44" href="/college-careers-more"><span class="_1uk4ltt6">Life skills</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="100"><a tabindex="-1" aria-label="Social &amp; emotional learning (Khan Kids)" href="/kids" class="_4crv9hk"><span class="_u1utz4z">Social &amp; emotional learning (Khan Kids)</span></a></li><li data-navigable-index="101"><a tabindex="-1" aria-label="Khanmigo for students" class="_4crv9hk" href="/college-careers-more/khanmigo-for-students"><span class="_u1utz4z">Khanmigo for students</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="102"><a tabindex="-1" aria-label="AI for education" class="_4crv9hk" href="/college-careers-more/ai-for-education"><span class="_u1utz4z">AI for education</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="103"><a tabindex="-1" aria-label="Financial literacy" class="_4crv9hk" href="/college-careers-more/financial-literacy"><span class="_u1utz4z">Financial literacy</span><div aria-hidden="true" class="_akfsuo"></div><div class="_6oauft"><span class="_1ny02i68">NEW</span></div></a></li><li data-navigable-index="104"><a tabindex="-1" aria-label="Internet safety" class="_4crv9hk" href="/college-careers-more/internet-safety"><span class="_u1utz4z">Internet safety</span></a></li><li data-navigable-index="105"><a tabindex="-1" aria-label="Social media literacy" class="_4crv9hk" href="/college-careers-more/social-media-challenges-and-opportunities"><span class="_u1utz4z">Social media literacy</span></a></li><li data-navigable-index="106"><a tabindex="-1" aria-label="Growth mindset" class="_4crv9hk" href="/partner-content/learnstorm-growth-mindset-activities-us"><span class="_u1utz4z">Growth mindset</span></a></li><li data-navigable-index="107"><a tabindex="-1" aria-label="College admissions" class="_4crv9hk" href="/college-careers-more/college-admissions"><span class="_u1utz4z">College admissions</span></a></li><li data-navigable-index="108"><a tabindex="-1" aria-label="Careers" class="_4crv9hk" href="/college-careers-more/career-content"><span class="_u1utz4z">Careers</span></a></li><li data-navigable-index="109"><a tabindex="-1" aria-label="Personal finance" class="_4crv9hk" href="/college-careers-more/personal-finance"><span class="_u1utz4z">Personal finance</span></a></li><li data-navigable-index="110"><a tabindex="-1" aria-label="See all Life Skills" class="_4crv9hk" href="/college-careers-more"><span class="_u1utz4z">See all Life Skills</span></a></li></ul></div></li><li><div class="_1b2zmqj" data-test-learn-menu-domain="partner-content"><ul><li data-navigable-index="111"><a tabindex="-1" class="_hsazh44" href="/partner-content"><span class="_1uk4ltt6">Partner courses</span></a></li></ul><ul class="_121xeo4"><li data-navigable-index="112"><a tabindex="-1" aria-label="Ancient Art" class="_4crv9hk" href="/getty-museum"><span class="_u1utz4z">Ancient Art</span></a></li><li data-navigable-index="113"><a tabindex="-1" aria-label="Asian Art" class="_4crv9hk" href="/asian-art-museum"><span class="_u1utz4z">Asian Art</span></a></li><li data-navigable-index="114"><a tabindex="-1" aria-label="Biodiversity" class="_4crv9hk" href="/cas-biodiversity"><span class="_u1utz4z">Biodiversity</span></a></li><li data-navigable-index="115"><a tabindex="-1" aria-label="Music" class="_4crv9hk" href="/all-star-orchestra"><span class="_u1utz4z">Music</span></a></li><li data-navigable-index="116"><a tabindex="-1" aria-label="NASA" class="_4crv9hk" href="/nasa"><span class="_u1utz4z">NASA</span></a></li><li data-navigable-index="117"><a tabindex="-1" aria-label="Natural History" class="_4crv9hk" href="/amnh"><span class="_u1utz4z">Natural History</span></a></li><li data-navigable-index="118"><a tabindex="-1" aria-label="New Zealand - Natural &amp; cultural history" class="_4crv9hk" href="/museum-of-new-zealand-te-papa-tongarewa"><span class="_u1utz4z">New Zealand - Natural &amp; cultural history</span></a></li><li data-navigable-index="119"><a tabindex="-1" aria-label="NOVA Labs" class="_4crv9hk" href="/nova"><span class="_u1utz4z">NOVA Labs</span></a></li><li data-navigable-index="120"><a tabindex="-1" aria-label="Philosophy" class="_4crv9hk" href="/wi-phi"><span class="_u1utz4z">Philosophy</span></a></li></ul></div></li></ul></div></div><div class="_1boekgo"><a data-hack-search-button-label="true" aria-label="Search for courses, skills, and videos" href="/search" class="_14nbw552" data-testid="navbar-search-button" style="background-color: rgb(247, 248, 250);"><div class="_dhzffk"><span class="_gkt786u">Search</span><div class="_1717m280"><span class="_n81lrqx"></span></div></div></a></div></div><div class="_1ujnvj"><a aria-label="Khan Academy" data-testid="header-logo" aria-disabled="false" class="_1ab8w4s7" href="/"><svg class="_1rt6g9t" aria-hidden="true" width="176px" height="28px" viewBox="0 0 176 28"><path d="M33.66,6.5A.54.54,0,0,1,34.21,6h2a.55.55,0,0,1,.55.55v6.2l5.79-6.52A.53.53,0,0,1,43,6h2.3a.48.48,0,0,1,.36.82l-6,6.75,6.43,7.69a.51.51,0,0,1-.41.81h-2.5a.55.55,0,0,1-.42-.16l-6-7.4v7a.56.56,0,0,1-.55.56h-2a.55.55,0,0,1-.55-.56Z"></path><path d="M47.78,6.45a.54.54,0,0,1,.5-.5h1.86a.52.52,0,0,1,.51.5v5.63a4.07,4.07,0,0,1,2.7-.9c3.38,0,4.3,2.34,4.3,5v5.32a.53.53,0,0,1-.51.51H55.28a.51.51,0,0,1-.5-.51V16.16c0-1.47-.67-2.36-1.93-2.36a2.18,2.18,0,0,0-2.2,1.86v5.85c0,.3-.14.51-.56.51H48.28a.52.52,0,0,1-.5-.51Z"></path><path d="M63.48,15.31a7.7,7.7,0,0,1,2,.3c0-1.35-.34-2-1.47-2a13.49,13.49,0,0,0-3,.39c-.35.12-.55-.13-.6-.45l-.23-1.2a.48.48,0,0,1,.34-.64,13.49,13.49,0,0,1,3.63-.53c3.31,0,4,1.72,4,4.62v5.71a.51.51,0,0,1-.51.51h-.78c-.18,0-.32-.07-.46-.37l-.3-.71a4.66,4.66,0,0,1-3.33,1.33,3.38,3.38,0,0,1-3.58-3.63C59.25,16.76,60.79,15.31,63.48,15.31Zm.07,4.82A2.27,2.27,0,0,0,65.45,19V17.45a4.23,4.23,0,0,0-1.56-.32c-1.22,0-1.88.57-1.88,1.51A1.4,1.4,0,0,0,63.55,20.13Z"></path><path d="M70.59,11.92a.51.51,0,0,1,.51-.51H72a.42.42,0,0,1,.44.32l.39,1a4.26,4.26,0,0,1,3.42-1.54c3.37,0,4.24,2.27,4.24,4.84v5.49A.52.52,0,0,1,80,22H78.1a.51.51,0,0,1-.51-.51V16c0-1.37-.55-2.22-1.83-2.22a2.34,2.34,0,0,0-2.3,1.65v6.06c0,.39-.16.51-.66.51H71.1a.53.53,0,0,1-.51-.51Z"></path><path d="M85.89,21.42,93,6a.4.4,0,0,1,.39-.25h.23A.39.39,0,0,1,94,6l7.07,15.45a.41.41,0,0,1-.39.6h-2a.66.66,0,0,1-.67-.46l-1.12-2.48H90.07l-1.13,2.48a.69.69,0,0,1-.66.46h-2A.4.4,0,0,1,85.89,21.42Zm9.91-4.89-2.29-5.05h-.07l-2.25,5.05Z"></path><path d="M107,11.18A5.24,5.24,0,0,1,111,13c.23.23.12.53-.11.76l-1,1.06c-.23.25-.48.13-.69-.07a2.84,2.84,0,0,0-2.11-.92,2.78,2.78,0,0,0-2.8,2.91,2.77,2.77,0,0,0,2.78,2.94,2.81,2.81,0,0,0,2.25-1.17.5.5,0,0,1,.66-.07l1,.87c.25.23.37.49.18.76a4.75,4.75,0,0,1-4.2,2.23,5.55,5.55,0,1,1,0-11.09Z"></path><path d="M116.83,15.31a7.82,7.82,0,0,1,2,.3c0-1.35-.35-2-1.47-2a13.5,13.5,0,0,0-3,.39c-.34.12-.55-.13-.59-.45l-.23-1.2a.48.48,0,0,1,.34-.64,13.49,13.49,0,0,1,3.63-.53c3.3,0,4,1.72,4,4.62v5.71a.51.51,0,0,1-.5.51h-.78c-.19,0-.32-.07-.46-.37l-.3-.71a4.68,4.68,0,0,1-3.33,1.33,3.38,3.38,0,0,1-3.58-3.63C112.61,16.76,114.15,15.31,116.83,15.31Zm.07,4.82A2.29,2.29,0,0,0,118.81,19V17.45a4.23,4.23,0,0,0-1.56-.32c-1.22,0-1.88.57-1.88,1.51A1.39,1.39,0,0,0,116.9,20.13Z"></path><path d="M128.62,11.18a7.67,7.67,0,0,1,2.55.44V6.45a.54.54,0,0,1,.5-.5h1.86a.52.52,0,0,1,.51.5V21.51a.51.51,0,0,1-.51.51h-.85c-.25,0-.41-.21-.5-.51l-.28-.83a4.55,4.55,0,0,1-3.46,1.59c-2.9,0-5.08-2.34-5.08-5.56A5.21,5.21,0,0,1,128.62,11.18Zm2.55,3.22a4.18,4.18,0,0,0-2.21-.6,2.68,2.68,0,0,0-2.64,2.91c0,1.5.85,2.94,2.51,2.94a2.43,2.43,0,0,0,2.34-1.47Z"></path><path d="M141.22,11.18a4.75,4.75,0,0,1,4.87,4.91c0,.16,0,.53-.05.69a.53.53,0,0,1-.5.48h-6.8a2.55,2.55,0,0,0,2.64,2.46,3.49,3.49,0,0,0,2.27-.78c.26-.21.53-.23.69,0l.9,1.19a.45.45,0,0,1-.05.69,6,6,0,0,1-3.95,1.45,5.37,5.37,0,0,1-5.37-5.56A5.37,5.37,0,0,1,141.22,11.18Zm2,4.2a1.94,1.94,0,0,0-2-1.83,2.11,2.11,0,0,0-2.25,1.83Z"></path><path d="M147.79,11.92a.51.51,0,0,1,.5-.51h.83a.4.4,0,0,1,.43.3l.39,1a4,4,0,0,1,3.24-1.54,3.61,3.61,0,0,1,3.17,1.61,4.53,4.53,0,0,1,3.42-1.61c3.39,0,4.2,2.16,4.2,4.91v5.42a.52.52,0,0,1-.53.51H161.6a.51.51,0,0,1-.5-.51V16c0-1.37-.51-2.22-1.84-2.22a2,2,0,0,0-2,1.1s0,.53,0,1v5.6a.52.52,0,0,1-.5.51H155a.5.5,0,0,1-.51-.51V16c0-1.37-.39-2.22-1.74-2.22a2.1,2.1,0,0,0-2,1.65v6.06a.52.52,0,0,1-.5.51h-1.86a.52.52,0,0,1-.5-.51Z"></path><path d="M165.07,12.1a.47.47,0,0,1,.46-.69h2.2a.42.42,0,0,1,.44.3l1.9,6.33h.05l2.41-6.33c.16-.28.34-.3.67-.3h2a.47.47,0,0,1,.46.69l-6.25,15.06a.53.53,0,0,1-.46.32h-2.2a.48.48,0,0,1-.46-.71l2.13-5.37Z"></path><path fill="#14bf96" d="M2.31,5.8A3.56,3.56,0,0,0,.66,8.6V19.4a3.56,3.56,0,0,0,1.65,2.8L12,27.62a3.75,3.75,0,0,0,3.3,0L25,22.2a3.56,3.56,0,0,0,1.65-2.8V8.6A3.56,3.56,0,0,0,25,5.8L15.31.38a3.75,3.75,0,0,0-3.3,0Z"></path><path fill="#ffffff" d="M23.61,11.32c-5.38,0-9.4,4.46-9.4,9.93v.23H13.13v-.23c0-5.47-4-9.91-9.42-9.93,0,.34,0,.69,0,1a9.91,9.91,0,0,0,6.4,9.32,10.47,10.47,0,0,0,3.59.64,10.64,10.64,0,0,0,3.62-.64,9.92,9.92,0,0,0,6.39-9.32C23.66,12,23.64,11.66,23.61,11.32Z"></path><circle fill="#ffffff" cx="13.66" cy="8.74" r="3"></circle></svg></a></div><div class="_btd0noz"><a data-testid="header-donate-link" target="_blank" rel="noopener noreferrer" href="https://donate.khanacademy.org/give/419869/#!/donation/checkout?c_src2=Webapp.header" class="_uc07yrz">Donate<span data-testid="external-icon" class="_1k2exlvd"></span></a><a id="login-or-signup" class="_2yu61fz" href="/login">Log in</a><a class="_1sq7o4lg" href="/signup">Sign up</a><div class="_xvt9wo"><a data-testid="mobile-search-button" aria-disabled="false" class="_5tdxkjz" href="/search"><div class="_cddezix"><span class="_qdm4ki">Search for courses, skills, and videos</span><span class="_n81lrqx"></span></div></a></div><div class="_xvt9wo"><button class="_1nv2rsnw" data-testid="mobile-header-menu-button" aria-expanded="false" aria-label="Open menu" aria-controls="page-header-responsive-nav-menu"><span class="_txg1n8l"></span></button></div></div></div></nav><div class="_1f3u7s" data-testid="responsive-nav-menu" id="page-header-responsive-nav-menu" role="menu"><div class="_xu2jcg _1pwnewep"></div></div></div>
+ChatGPT
+To achieve a similar header to the one you described for your site, you can use the following HTML and CSS structure. Make sure to include your logo image in the directory with the name mainlogo.
+
+HTML
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eduPrep Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="top-header-container" class="header-container">
+        <nav aria-label="page header" class="navbar" role="navigation">
+            <div class="nav-left">
+                <div class="nav-menu">
+                    <button class="dropdown-button" aria-expanded="false">
+                        <span>Courses<span class="arrow"></span></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#">Physics</a></li>
+                            <li><a href="#">Communication Studies</a></li>
+                            <li><a href="#">Computer Science</a></li>
+                            <li><a href="#">Information Technology</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-center">
+                <a href="/" class="logo">
+                    <img src="mainlogo.png" alt="eduPrep Hub Logo">
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="search-button">Search</a>
+                <a href="/login" class="login-button">Log in</a>
+                <a href="/signup" class="signup-button">Sign up</a>
+            </div>
         </nav>
     </header>
     
