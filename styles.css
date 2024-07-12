@@ -102,14 +102,15 @@ body {
 }
 
 .donate-banner {
-    background-color: #fff;
-    border: 1px solid #eaeaea;
+    background-color: #2c3e50;
+    color: white;
     padding: 20px;
-    width: 300px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .donate-content {
@@ -124,15 +125,18 @@ body {
     border: none;
     font-size: 20px;
     cursor: pointer;
+    color: white;
 }
 
 .headline {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
+    margin: 0 0 10px 0;
 }
 
 .description {
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
 }
 
 .donate-form {
@@ -142,50 +146,84 @@ body {
 fieldset {
     border: none;
     margin: 10px 0;
-}
-
-.frequency-chooser, .amount-chooser {
-    list-style-type: none;
     padding: 0;
-    display: flex;
-    gap: 10px;
 }
 
-.frequency-chooser li, .amount-chooser li {
-    display: flex;
-    align-items: center;
+legend {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-input[type="radio"] {
-    margin-right: 5px;
+.classy-variable-chooser {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 0;
+}
+
+.classy-variable-chooser li {
+    flex: 1;
+    margin: 5px;
+}
+
+.classy-variable-chooser li label {
+    display: block;
+    padding: 10px;
+    background-color: #34495e;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.choice-input:checked + label {
+    background-color: #3498db;
+    color: white;
+}
+
+.choice-input:focus + label,
+.choice-input:hover + label {
+    background-color: #1abc9c;
 }
 
 #custom-amount {
     width: calc(100% - 10px);
-    padding: 5px;
+    padding: 10px;
     margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: none;
 }
 
 .donate-button {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
     border: none;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .donate-button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
 }
 
 .terms {
     font-size: 12px;
-    color: #666;
+    color: #ccc;
     margin-top: 10px;
 }
 
 .terms a {
-    color: #007bff;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
 }
