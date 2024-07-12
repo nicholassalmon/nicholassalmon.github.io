@@ -93,3 +93,99 @@ body {
     font-weight: bold;
     color: #007bff;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.donate-banner {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.donate-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.close-button {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.headline {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.description {
+    margin: 10px 0;
+}
+
+.donate-form {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    margin: 10px 0;
+}
+
+.frequency-chooser, .amount-chooser {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.frequency-chooser li, .amount-chooser li {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#custom-amount {
+    width: calc(100% - 10px);
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.donate-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.donate-button:hover {
+    background-color: #0056b3;
+}
+
+.terms {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: #007bff;
+}
