@@ -44,7 +44,7 @@
                 <p class="headline">Help us do more</p>
                 <p class="description">We're asking for your support to keep eduPrep Hub thriving. <strong>If everyone reading this gives $12 monthly, eduPrep Hub can continue to provide valuable resources for years to come.</strong> Please help us keep eduPrep Hub free, for anyone, anywhere, forever.</p>
             </div>
-            <form class="donate-form" action="YOUR_PAYPAL_ME_LINK" method="POST" target="_blank">
+            <form class="donate-form">
                 <fieldset>
                     <legend>Select gift frequency</legend>
                     <ul class="classy-variable-chooser interval horizontal">
@@ -63,11 +63,12 @@
                     </ul>
                     <input type="text" id="custom-amount" name="custom-amount" placeholder="Enter custom amount" style="display:none;">
                 </fieldset>
-                <input type="submit" class="donate-button" value="Give now">
+                <div id="paypal-button-container"></div>
                 <p class="terms">By donating, you agree to our <a href="/about/tos" target="_blank" rel="noopener noreferrer">terms of service</a> and <a href="/about/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a>.</p>
             </form>
         </div>
     </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=ARGDBzCm5ALexFmgRenpJlod7Wo3fWP26alCnyHErKSXT0otNPYeYQ4t9NSBlKOkFaa2esIpOmRHT8B6&vault=true&intent=subscription"></script>
     <script src="scripts.js"></script>
     
     <footer>
