@@ -5,7 +5,7 @@ document.querySelectorAll('.amount-btn').forEach((btn) => {
         });
         event.currentTarget.classList.add('active');
         var amount = event.currentTarget.getAttribute('data-amount');
-        if(amount === "other") {
+        if (amount === "other") {
             document.getElementById('custom-amount').style.display = 'block';
         } else {
             document.getElementById('custom-amount').style.display = 'none';
@@ -30,7 +30,11 @@ function updatePayPalButton(amount) {
         "30": "P-9C920792147412353M2WAZXI",
         "50": "P-21N451911V4636541M2WA2JY"
     };
+
     let planId = planIds[amount] || "YOUR_PLAN_ID_OTHER"; // Handle custom amount separately if needed
+
+    // Clear the existing PayPal button container to force re-render
+    document.getElementById('paypal-button-container').innerHTML = '';
 
     paypal.Buttons({
         createSubscription: function(data, actions) {
