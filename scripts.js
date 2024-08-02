@@ -25,10 +25,10 @@ document.querySelectorAll('.frequency-btn').forEach((btn) => {
 
 function updatePayPalButton(amount) {
     const planIds = {
-        "12": "P-0HU54874RU5111131M2WAYRA",
-        "20": "P-8J02275170692803PM2WAZJA",
-        "30": "P-9C920792147412353M2WAZXI",
-        "50": "P-21N451911V4636541M2WA2JY"
+        "12": "P-5P096268TF1141923M2WDDII",
+        "20": "P-9AS52475VV103035JM2WDDTY",
+        "30": "P-0RK7870067610100VM2WDD6I",
+        "50": "P-9D500239H7526993NM2WDEGI"
     };
 
     let planId = planIds[amount] || "YOUR_PLAN_ID_OTHER"; // Handle custom amount separately if needed
